@@ -5,7 +5,7 @@ import { Container } from "@chakra-ui/react";
 const Main = ({ children }: { children: ReactNode }) => {
   return (
     <Container
-      mt="24px"
+      mt="48px"
       maxW={{
         base: "280px",
         sm: "md",

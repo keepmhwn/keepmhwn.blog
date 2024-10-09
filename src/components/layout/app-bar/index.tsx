@@ -8,7 +8,8 @@ const AppBar = () => {
   return (
     <Flex
       height="64px"
-      padding="16px"
+      padding={"24px 48px"}
+      alignItems="center"
       justifyContent="space-between"
       zIndex="sticky"
       sx={{
@@ -19,7 +20,7 @@ const AppBar = () => {
     >
       <Link href="/">
         <Heading as="h1" size="lg" color="gray.700" role="button">
-          mHwn
+          mhwn
         </Heading>
       </Link>
       <Navigation />
