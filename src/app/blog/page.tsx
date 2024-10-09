@@ -1,20 +1,22 @@
-import Link from "next/link";
-import { Heading, Button } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 
 import { getArticles } from "@/lib";
+
+import PreviewArticleCard from "@/components/article/preview";
 
 const BlogPage = async () => {
   const articles = await getArticles();
 
   return (
-    <>
-      <Heading color="black">Blog</Heading>
+    <Stack spacing="24px">
       {articles.map((article) => (
-        <Link key={article.data.title} href={article.url}>
-          <Button colorScheme="black">{article.data.title}</Button>
-        </Link>
+        <PreviewArticleCard
+          key={article.url}
+          href={article.url}
+          metadata={article.data}
+        />
       ))}
-    </>
+    </Stack>
   );
 };
 
