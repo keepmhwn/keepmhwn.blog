@@ -1,3 +1,5 @@
+import type { MarkdownMetadata } from "@/types/blog";
+
 import path from "path";
 import fs from "fs";
 import { sync } from "glob";
@@ -6,12 +8,24 @@ import matter from "gray-matter";
 const BASE_PATH = "/src/articles";
 const ARTICLES_PATH = path.join(process.cwd(), BASE_PATH);
 
-export const parseArticle = async (articlePath: string) => {
+const DEFAULT_THUMBNAIL = "/images/blog/default-thumbnail.jpg";
+
+export const parseArticle = async (
+  articlePath: string
+): Promise<{ url: string; data: MarkdownMetadata; content: string }> => {
   const file = fs.readFileSync(articlePath, "utf-8");
   const { data, content } = matter(file);
+
+  const metadata: MarkdownMetadata = {
+    title: data.title ?? "",
+    date: data.date ?? "",
+    intro: data.intro ?? "",
+    thumbnail: data.thumbnail ?? DEFAULT_THUMBNAIL,
+  };
+
   return {
     url: `/blog/${encodeURI(data.title)}`,
-    data,
+    data: metadata,
     content,
   };
 };
