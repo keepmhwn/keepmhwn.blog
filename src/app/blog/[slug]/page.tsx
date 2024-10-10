@@ -1,7 +1,12 @@
+import { Box, Divider } from "@chakra-ui/react";
+
+import ArticleHeader from "@/components/article/detail/header";
+import ArticleBody from "@/components/article/detail/body";
+
 import { getArticlePaths, parseArticle, getArticle } from "@/lib";
 
 type Props = {
-  params: { title: string; slug: string };
+  params: { slug: string };
 };
 
 export const dynamicParams = false;
@@ -10,13 +15,26 @@ export async function generateStaticParams() {
   const paths = getArticlePaths();
   const articles = await Promise.all(paths.map((path) => parseArticle(path)));
   return articles.map((article) => ({
-    slug: encodeURI(article.data.title),
+    params: { slug: article.data.title },
   }));
 }
 
 const Article = async ({ params }: Props) => {
   const article = await getArticle(params.slug);
-  return <>{article.data.title}</>;
+
+  return (
+    <Box>
+      <ArticleHeader metadata={article.data} />
+      <Divider
+        width="50%"
+        height="1px"
+        bgColor="gray.500"
+        margin="0 auto"
+        my="24px"
+      />
+      <ArticleBody content={article.content} />
+    </Box>
+  );
 };
 
 export default Article;
