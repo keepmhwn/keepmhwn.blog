@@ -6,13 +6,12 @@ import { Card, CardBody, Stack, Heading, Text, Image } from "@chakra-ui/react";
 import dayjs from "dayjs";
 
 type Props = {
-  href: string;
   metadata: MarkdownMetadata;
 };
 
-const PreviewArticleCard = ({ href, metadata }: Props) => {
+const PreviewArticleCard = ({ metadata }: Props) => {
   return (
-    <Link href={href}>
+    <Link href={`/blog/${metadata.title}`}>
       <Card
         overflow="hidden"
         variant="elevated"

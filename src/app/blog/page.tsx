@@ -11,8 +11,7 @@ const BlogPage = async () => {
     <Stack spacing="24px">
       {articles.map((article) => (
         <PreviewArticleCard
-          key={article.url}
-          href={article.url}
+          key={`${article.data.title}-${article.data.date}`}
           metadata={article.data}
         />
       ))}
