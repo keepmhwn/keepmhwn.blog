@@ -18,7 +18,7 @@ const NavigationMenuItem = ({
           paddingX: 1,
           borderRadius: 0,
           "&:hover": {
-            backgroundColor: "none",
+            backgroundColor: "inherit",
             borderBottom: "2px solid #718096",
           },
         }}
