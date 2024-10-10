@@ -12,7 +12,7 @@ const DEFAULT_THUMBNAIL = "/images/blog/default-thumbnail.jpg";
 
 export const parseArticle = async (
   articlePath: string
-): Promise<{ url: string; data: MarkdownMetadata; content: string }> => {
+): Promise<{ data: MarkdownMetadata; content: string }> => {
   const file = fs.readFileSync(articlePath, "utf-8");
   const { data, content } = matter(file);
 
@@ -24,7 +24,6 @@ export const parseArticle = async (
   };
 
   return {
-    url: `/blog/${encodeURI(data.title)}`,
     data: metadata,
     content,
   };
@@ -41,8 +40,8 @@ export const getArticles = async () => {
   return articles;
 };
 
-export const getArticle = async (encodedTitle: string) => {
-  const decodedTitle = decodeURI(encodedTitle);
+export const getArticle = async (title: string) => {
+  const decodedTitle = decodeURIComponent(title);
   const article = await parseArticle(`${ARTICLES_PATH}/${decodedTitle}.mdx`);
   return article;
 };
