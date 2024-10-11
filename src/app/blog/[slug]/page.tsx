@@ -14,9 +14,13 @@ export const dynamicParams = false;
 export async function generateStaticParams() {
   const paths = getArticlePaths();
   const articles = await Promise.all(paths.map((path) => parseArticle(path)));
-  return articles.map((article) => ({
-    params: { slug: article.data.title },
+  const slugs = articles.map((article) => ({
+    slug:
+      process.env.NODE_ENV === "development"
+        ? encodeURIComponent(article.data.title)
+        : article.data.title,
   }));
+  return slugs;
 }
 
 const Article = async ({ params }: Props) => {
