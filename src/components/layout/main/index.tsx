@@ -7,7 +7,7 @@ const Main = ({ children }: { children: ReactNode }) => {
     <Container
       mt="48px"
       maxW={{
-        base: "280px",
+        base: "320px",
         sm: "md",
         md: "container.sm",
         lg: "container.md",
