@@ -6,11 +6,13 @@ import {
   ListItem,
 } from "@chakra-ui/react";
 import { MY_DATA } from "@/data/about";
+import { MY_PROJECT_LIST } from "@/data/projects";
 
 import EmailButton from "@/components/social-button/email";
 import GithubButton from "@/components/social-button/github";
 
 import SkillsView from "./_components/skills-view";
+import ProjectsView from "./_components/projects-view";
 
 const AboutPage = () => {
   return (
@@ -33,6 +35,7 @@ const AboutPage = () => {
         </HStack>
       </Stack>
       <SkillsView skills={MY_DATA.skills} />
+      <ProjectsView projects={MY_PROJECT_LIST} />
     </Stack>
   );
 };
