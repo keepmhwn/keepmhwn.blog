@@ -2,6 +2,7 @@ import { Box, Divider } from "@chakra-ui/react";
 
 import ArticleHeader from "@/components/article/detail/header";
 import ArticleBody from "@/components/article/detail/body";
+import Comments from "../_components/comments";
 
 import { getArticlePaths, parseArticle, getArticle } from "@/lib";
 
@@ -37,6 +38,7 @@ const Article = async ({ params }: Props) => {
         my="24px"
       />
       <ArticleBody content={article.content} />
+      <Comments />
     </Box>
   );
 };
