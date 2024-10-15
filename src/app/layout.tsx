@@ -4,6 +4,7 @@ import ChakraProvider from "@/providers/chakra";
 
 import AppBar from "@/components/layout/app-bar";
 import Main from "@/components/layout/main";
+import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   title: "mHwn",
@@ -17,10 +18,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+        }}
+      >
         <ChakraProvider>
           <AppBar />
           <Main>{children}</Main>
+          <Footer />
         </ChakraProvider>
       </body>
     </html>

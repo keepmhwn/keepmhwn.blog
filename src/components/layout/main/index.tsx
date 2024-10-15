@@ -12,6 +12,9 @@ const Main = ({ children }: { children: ReactNode }) => {
         md: "container.sm",
         lg: "container.md",
       }}
+      sx={{
+        flex: "1 1 0%",
+      }}
     >
       {children}
     </Container>
