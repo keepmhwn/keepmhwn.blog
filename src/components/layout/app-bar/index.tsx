@@ -20,7 +20,7 @@ const AppBar = () => {
     >
       <Link href="/">
         <Heading as="h1" size="lg" color="gray.700" role="button">
-          mhwn
+          keepmhwn
         </Heading>
       </Link>
       <Navigation />

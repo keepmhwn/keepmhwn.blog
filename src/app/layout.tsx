@@ -7,7 +7,7 @@ import Main from "@/components/layout/main";
 import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "mHwn",
+  title: "keepmhwn",
   description: "My Personal Homepage",
 };
 
