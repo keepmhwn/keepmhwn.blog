@@ -6,6 +6,8 @@ import AppBar from "@/components/layout/app-bar";
 import Main from "@/components/layout/main";
 import Footer from "@/components/layout/footer";
 
+const domain = process.env.NEXT_PUBLIC_DOMAIN;
+
 export const metadata: Metadata = {
   title: "keepmhwn",
   description: "My Personal Homepage",
@@ -13,10 +15,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko-KR",
     siteName: "Keepmhwn",
-    description: "Personal Blog",
+    description: "문제를 해결하는 개발자가 되고자 합니다.",
     images: {
-      url: "/images/blog-thumbnail.png",
-      alt: "Keepmhwn",
+      url: `${domain}/images/blog-thumbnail.png`,
+      alt: "Keepmhwn Blog",
     },
   },
 };
