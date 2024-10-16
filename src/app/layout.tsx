@@ -10,12 +10,12 @@ const domain = process.env.NEXT_PUBLIC_DOMAIN;
 
 export const metadata: Metadata = {
   title: "keepmhwn",
-  description: "My Personal Homepage",
+  description: "문제를 효과적으로 해결하는 개발자가 되고자 합니다.",
   openGraph: {
     type: "website",
     locale: "ko-KR",
     siteName: "Keepmhwn",
-    description: "문제를 해결하는 개발자가 되고자 합니다.",
+    description: "문제를 효과적으로 해결하는 개발자가 되고자 합니다.",
     images: {
       url: `${domain}/images/blog-thumbnail.png`,
       alt: "Keepmhwn Blog",
