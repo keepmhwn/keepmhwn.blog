@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: "Keepmhwn",
     description: "Personal Blog",
     images: {
-      url: "images/blog-thumbnail.png",
+      url: "blog-thumbnail.png",
       alt: "Keepmhwn",
     },
   },
