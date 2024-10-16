@@ -8,7 +8,7 @@ export const MY_DATA: MyInfo = {
     "언젠가 해결하고싶은 단 하나의 문제를 만나는 날을 위해 여러 가지 기술을 배우고 있습니다.",
   ],
   email: "kimmhwn@gmail.com",
-  github: "https://github.com/kimmihi",
+  github: "https://github.com/keepmhwn",
   skills: ["Javascript", "Typescript", "React", "Next.js"],
   interestedIssueList: [],
 };
