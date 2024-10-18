@@ -1,7 +1,8 @@
-import { Box, Divider } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 import ArticleHeader from "@/components/article/detail/header";
 import ArticleBody from "@/components/article/detail/body";
+import Divider from "@/components/mdx/divider";
 import Comments from "../_components/comments";
 
 import { getArticlePaths, parseArticle, getArticle } from "@/lib";
@@ -30,13 +31,7 @@ const Article = async ({ params }: Props) => {
   return (
     <Box>
       <ArticleHeader metadata={article.data} />
-      <Divider
-        width="50%"
-        height="1px"
-        bgColor="gray.500"
-        margin="0 auto"
-        my="24px"
-      />
+      <Divider />
       <ArticleBody content={article.content} />
       <Comments />
     </Box>

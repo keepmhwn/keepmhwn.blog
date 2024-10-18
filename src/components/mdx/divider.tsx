@@ -6,11 +6,11 @@ const Divider = ({ children, ...props }: PropsWithChildren) => {
   return (
     <ChakraDivider
       {...props}
-      width="50%"
+      width="35%"
       height="1px"
       bgColor="gray.500"
       margin="0 auto"
-      my="24px"
+      my="48px"
     >
       {children}
     </ChakraDivider>
