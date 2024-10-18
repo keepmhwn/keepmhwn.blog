@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Box } from "@chakra-ui/react";
 
 import ArticleHeader from "@/components/article/detail/header";
@@ -11,7 +12,31 @@ type Props = {
   params: { slug: string };
 };
 
+const domain = process.env.NEXT_PUBLIC_DOMAIN;
+
 export const dynamicParams = false;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = params;
+  const article = await getArticle(slug);
+
+  const { title, date, intro, thumbnail } = article.data;
+
+  return {
+    title,
+    description: intro,
+    openGraph: {
+      title,
+      description: intro,
+      type: "article",
+      publishedTime: date,
+      url: `${domain}/${title}`,
+      images: {
+        url: thumbnail,
+      },
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const paths = getArticlePaths();
