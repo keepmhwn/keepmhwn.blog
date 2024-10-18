@@ -12,8 +12,6 @@ type Props = {
   params: { slug: string };
 };
 
-const domain = process.env.NEXT_PUBLIC_DOMAIN;
-
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -30,7 +28,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: intro,
       type: "article",
       publishedTime: date,
-      url: `${domain}/blog/${encodeURIComponent(title)}`,
       images: {
         url: thumbnail,
       },
