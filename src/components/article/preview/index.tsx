@@ -1,7 +1,8 @@
 import type { MarkdownMetadata } from "@/types/blog";
 
 import Link from "next/link";
-import { Card, CardBody, Stack, Heading, Text, Image } from "@chakra-ui/react";
+import Image from "next/image";
+import { Box, Card, CardBody, Stack, Heading, Text } from "@chakra-ui/react";
 
 import dayjs from "dayjs";
 
@@ -16,13 +17,20 @@ const PreviewArticleCard = ({ metadata }: Props) => {
         overflow="hidden"
         variant="elevated"
         direction={{ base: "column", sm: "row" }}
+        maxH={{ base: "350px", sm: "180px" }}
       >
-        <Image
-          objectFit="cover"
-          src={metadata.thumbnail}
-          alt={`${metadata.title} thumbnail`}
-          maxW={{ base: "100%", sm: "200px" }}
-        />
+        <Box
+          width={{ base: "100%", sm: "150px", md: "200px" }}
+          height="180px"
+          sx={{ position: "relative" }}
+        >
+          <Image
+            fill
+            objectFit="cover"
+            src={metadata.thumbnail}
+            alt={`${metadata.title} thumbnail`}
+          />
+        </Box>
         <CardBody
           bgColor="white"
           _hover={{
@@ -30,7 +38,7 @@ const PreviewArticleCard = ({ metadata }: Props) => {
           }}
         >
           <Stack>
-            <Heading color="gray.800" size="md">
+            <Heading color="gray.800" size="md" noOfLines={1}>
               {metadata.title}
             </Heading>
             <Text color="gray.500">
