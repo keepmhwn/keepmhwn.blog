@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko-KR",
     siteName: "Keepmhwn",
+    url: domain,
     description: "문제를 효과적으로 해결하는 개발자가 되고자 합니다.",
     images: {
       url: `${domain}/images/blog-thumbnail.png`,
