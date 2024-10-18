@@ -27,6 +27,7 @@ const PreviewArticleCard = ({ metadata }: Props) => {
           <Image
             fill
             objectFit="cover"
+            quality={30}
             src={metadata.thumbnail}
             alt={`${metadata.title} thumbnail`}
           />
